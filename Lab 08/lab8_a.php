@@ -52,15 +52,11 @@
         let mysql = require("mysql");
 
         let connection = mysql.createConnection({
-            host = "cmslamp14.aut.ac.nz",
-            user = "xwg1585",
-            pswd = "ws@king88888",
-            dbnm = "xwg1585"
-            // host: "localhost", //连接本地计算机
-            // port: 3306, //端口
-            // user: "root", //数据库账号
-            // password: "qq124519", //密码
-            // database: "SchoolTownDB" //连接的数据库名
+            host: "host",
+            user: "x",
+            pswd: "x",
+            dbnm: "x"
+
         });
 
 
