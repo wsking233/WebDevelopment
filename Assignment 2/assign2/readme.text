@@ -1,0 +1,30 @@
+file list:
+//config folder contains:
+./config/setting.php
+
+//css folder contains
+./css/styles.css
+
+//img folder contains
+./img/admin-line.png
+./img/AUTLogo.jpg
+./img/favicon.ico
+./img/home.png
+
+//src folder contains
+./src/admin.html
+./src/admin.js
+./src/admin.php
+./src/admin_driver.php
+./src/booking.html
+./src/booking.js
+./src/booking.php
+
+
+//instruction
+
+this system is for booking a cab, user can input thier information about
+their name, phone number also where and when to pick them up and drop down.
+then the system will return a recipt that incould the reference number and the pick up date and time.
+on the admin page, user could search for booking information about who went to where at what time,
+also, shows the status on is the driver already assigned.

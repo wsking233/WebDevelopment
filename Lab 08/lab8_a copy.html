@@ -1,0 +1,131 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- <script type="text/javascript" src="questionE.js"></script> -->
+  </head>
+  <body>
+    <h1>Lab 8</h1>
+    <!-- question a) -->
+    <h3>Question a)</h3>
+    <script>
+      for ($i = 1; $i <= 10; $i++) {
+        document.write($i + " ");
+      }
+    </script>
+    <br />
+    <br />
+
+    <!-- question b)-->
+    <h3>Question b)</h3>
+    <button type="button" name="red" onclick="setBgColor('darkred')">
+      DarkRed
+    </button>
+    <button type="button" name="blue" onclick="setBgColor('darkblue')">
+      DarkBlue
+    </button>
+    <button type="button" name="red" onclick="setBgColor('pink')">Pink</button>
+
+    <script>
+      document.bgColor = "grey";
+
+      function setBgColor(color) {
+        document.bgColor = color;
+      }
+    </script>
+    <br />
+
+    <!-- question d)-->
+    <h3>Question d)</h3>
+
+    <button type="button" onclick="questionD()">
+      click to start question d
+    </button>
+
+    <script>
+      function questionD() {
+        var text = prompt("Please enter the a sentence", "hello world");
+        var word = text.split(" ");
+        for (i = 0; i < word.length; i++) {
+          document.write(word[i] + "<br>");
+        }
+      }
+    </script>
+
+    <h3>question e)</h3>
+    <input name="pname" value="name" />
+    <input name="pemail" value="email" />
+    <input id="insert" type="button" value="insert" onclick="addPerson(pname.value, pemail.value);"/>
+    <input id="print" type="button" value="show all" onclick="printPerson();" />
+
+    <script>
+      let mysql = require("mysql");
+
+      let connection = mysql.createConnection({
+        host: "cmslamp14.aut.ac.nz",
+        user: "xwg1585",
+        password: "ws@king88888",
+        database: "xwg1585",
+      });
+
+      class person {
+        constructor() {
+          var name;
+          var email;
+        }
+
+        print() {
+          document.write("name: " + name + " | email: " + email);
+        }
+      }
+
+      function addPerson(name, email) {
+        //connect to database
+        connection.connect((err) => {
+          if (err) {
+            console.error("connection error" + err.stack);
+            return;
+          }
+          document.write("databese connected!");
+          alert("database connected!");
+        //   console.log("database connected!");
+        });
+
+        //insert
+        let sql = "insert into lab08 values(" + name + ",null," + email + ")";
+
+        connection.query(sql, (err, result) => {
+          if (err) {
+            console.error("error" + err.message);
+            result;
+          }
+          alert("done!");
+        //   console.log("done!");
+        });
+
+        connection.end();
+      }
+
+      function printPerson() {
+        //connect to database
+        connection.connect((err) => {
+          if (err) {
+            console.error("connection error" + err.stack);
+            return;
+          }
+          console.log("database connected!");
+        });
+        //search
+        connection.query("SELECT * FROM lab07", (err, result) => {
+          if (err) {
+            console.error("error:" + err.message);
+            result;
+          }
+          console.log(result);
+        });
+
+        connection.end();
+      }
+    </script>
+  </body>
+</html>

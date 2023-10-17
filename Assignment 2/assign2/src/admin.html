@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+	Name: William Wang
+	Student ID: 18017970
+	email:xwg1585@autuni.ac.nz
+
+  this is the html file for admin page, it shows the GUI to user.
+  and user could search booking information by Reference Number, Customer name, and Phone.
+  if there was no key words, the system will shows the last 2 hours boking information.
+  also, this system povide a function to assign driver to specific Booking whicih select by Reference Number.
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- icons -->
+    <link rel="apple-touch-icon" href="../img/AUTLogo.jpg" />
+    <link
+      rel="shortcut icon"
+      href="https://www.aut.ac.nz/__data/assets/file/0018/747/favicon.ico"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+
+    <!-- javascript -->
+    <script type="text/javascript" src="admin.js"></script>
+
+    <title>COMP721 Web Development</title>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <div style="float: left; margin-right: 20px">
+          <img src="../img/AUTLogo.jpg" alt="AUTLogo" style="width: 100px" />
+        </div>
+        <div>
+          <h1 class="header-heading">COMP721 Web Development - Assignment 2</h1>
+        </div>
+        <div class="header-li">
+          <li><a href="admin.html"><img src="../img/admin-line.png" alt="admin"> Admin</a></li>
+          <li><a href="booking.html"><img src="../img/home.png" alt="Home"> Home</a></li>
+        </div>
+      </div>
+      <div class="content">
+        <div class="up-down">
+          <div class="topBox">
+
+            <form action="javascript:searchBooking()">
+                <input type="text" name="bsearch" id="bsearch" style="width: 40%; height: 25px;" placeholder="Search by: Reference Number, Customer Name or Number">
+                <input type="submit" name="sbutton" value="submit" onclick="searchBooking(); return false" style="height:25px;">
+            </form>
+
+          </div>
+          <div class="downBox" id="tableDiv">
+            <p>here to show the reference information</p>
+          </div>
+          <div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div style="float: left; margin-right: 20px">
+          <img src="../img/AUTLogo.jpg" alt="AUTLogo" style="width: 180px" />
+        </div>
+        <div>
+          <p>
+            I declare that this assignment is my individual work. I have not
+            worked collaboratively nor have I copied from any other student's
+            work or from any other source.
+          </p>
+          <p>
+            Name: William Wang <br />
+            Student ID: 18017970 <br />
+            Email: xwg1585@autuni.ac.nz
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
